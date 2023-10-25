@@ -24,13 +24,13 @@ const TopicsList = async () => {
   return (
     <>
     {topics.map((t) => (
-    <div className='p-4 border border-slate-300 my-3 flex justify-between items-start'>
+    <div key={t._id} className='p-4 border border-slate-300 my-3 flex justify-between items-start'>
         <div>
           <h2 className='text-2xl font-bold'>{t.title}</h2>
           <div>{t.description}</div>
         </div>
         <div className='flex gap-2'>
-          <RemoveBtn />
+          <RemoveBtn id={t._id} />
           <Link href={`editTopic/${t._id}`}>
             <HiPencilAlt size={24}/>
           </Link>
